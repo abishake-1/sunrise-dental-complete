@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reports - Sunrise Dental</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header no-print" id="site-header"></header>
+  <main id="main" class="container">
+    <div id="alerts" aria-live="polite"></div>
+    <h1>Reports</h1>
+    <section class="card no-print" aria-labelledby="filters-heading">
+      <h2 id="filters-heading">Choose a report</h2>
+      <form id="report-form" novalidate>
+        <div class="grid-2">
+          <div class="field"><label for="report">Report</label>
+            <select id="report">
+              <option value="daily-appointments">Daily appointments per dentist</option>
+              <option value="monthly-revenue">Monthly revenue by treatment</option>
+              <option value="top-treatments">Top treatments</option>
+              <option value="dentist-utilization">Dentist utilization</option>
+              <option value="cancellation-rate">Cancellation rate</option>
+            </select></div>
+        </div>
+        <div id="range-fields" class="grid-2">
+          <div class="field"><label for="from">From</label><input id="from" type="date"><span class="error-text" id="err-from" data-error-for="from"></span></div>
+          <div class="field"><label for="to">To</label><input id="to" type="date"><span class="error-text" id="err-to" data-error-for="to"></span></div>
+        </div>
+        <div id="month-fields" class="grid-2" hidden>
+          <div class="field"><label for="year">Year</label><input id="year" type="number" min="2000" max="2100" step="1"><span class="error-text" id="err-year" data-error-for="year"></span></div>
+          <div class="field"><label for="month">Month</label><select id="month"><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select><span class="error-text" id="err-month" data-error-for="month"></span></div>
+        </div>
+        <div id="limit-field" hidden><div class="field"><label for="limit">How many treatments</label><input id="limit" type="number" min="1" max="50" step="1" value="5"><span class="error-text" id="err-limit" data-error-for="limit"></span></div></div>
+        <div class="actions">
+          <button id="run-button" class="btn" type="submit">Show report</button>
+          <button id="csv-button" class="btn btn-secondary" type="button">Download CSV</button>
+          <button id="print-button" class="btn btn-secondary" type="button">Print</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="output" class="card" aria-labelledby="report-title" hidden>
+      <h2 id="report-title"></h2>
+      <p id="report-range" class="muted"></p>
+      <div id="summary" class="summary"></div>
+      <div id="chart-box" class="chart-box">
+        <canvas id="chart" role="img" aria-label="Bar chart of the report"></canvas>
+      </div>
+      <div id="table"></div>
+    </section>
+  </main>
+  <footer class="site-footer no-print">Sunrise Dental Clinic - staff system</footer>
+  <script type="module" src="js/reports.js"></script>
+</body>
+</html>

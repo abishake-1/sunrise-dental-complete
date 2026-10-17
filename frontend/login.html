@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in - Sunrise Dental</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main id="main" class="container">
+    <div class="login-wrap">
+      <h1 class="login-title">Sunrise Dental Clinic</h1>
+      <div id="alerts" aria-live="polite"></div>
+      <section class="card" aria-labelledby="login-heading">
+        <h2 id="login-heading">Staff login</h2>
+        <form id="login-form" novalidate>
+          <div class="field"><label for="username">Username</label><input id="username" name="username" type="text" autocomplete="username" maxlength="50" autofocus><span class="error-text" id="err-username" data-error-for="username"></span></div>
+          <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" maxlength="128"><span class="error-text" id="err-password" data-error-for="password"></span></div>
+          <button id="login-button" class="btn" type="submit">Log in</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>

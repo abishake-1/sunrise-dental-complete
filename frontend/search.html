@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search - Sunrise Dental</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header no-print" id="site-header"></header>
+  <main id="main" class="container">
+    <div id="alerts" aria-live="polite"></div>
+    <h1>Search Appointment</h1>
+    <section class="card" aria-labelledby="search-heading">
+      <h2 id="search-heading">Find by appointment number</h2>
+      <form id="search-form" novalidate>
+        <div class="row">
+          <div class="field"><label for="number">Appointment number</label><input id="number" name="number" type="text" maxlength="20" placeholder="APT-0001" autocomplete="off" autofocus><span class="hint">Example: APT-0001</span><span class="error-text" id="err-number" data-error-for="number"></span></div>
+          <div class="field"><button id="search-button" class="btn" type="submit">Search</button></div>
+        </div>
+      </form>
+    </section>
+    <div id="result" aria-live="polite"></div>
+  </main>
+  <footer class="site-footer no-print">Sunrise Dental Clinic - staff system</footer>
+  <script type="module" src="js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bill - Sunrise Dental</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header no-print" id="site-header"></header>
+  <main id="main" class="container">
+    <div id="alerts" aria-live="polite"></div>
+    <h1>Bill</h1>
+    <section class="card no-print" aria-labelledby="lookup-heading">
+      <h2 id="lookup-heading">1. Find the appointment</h2>
+      <form id="lookup-form" novalidate>
+        <div class="row">
+          <div class="field"><label for="number">Appointment number</label><input id="number" name="number" type="text" maxlength="20" placeholder="APT-0001" autocomplete="off"><span class="hint">Only COMPLETED appointments can be billed</span><span class="error-text" id="err-number" data-error-for="number"></span></div>
+          <div class="field"><button id="lookup-button" class="btn" type="submit">Load</button></div>
+        </div>
+      </form>
+      <form id="bill-id-form" novalidate>
+        <div class="row">
+          <div class="field"><label for="billId">Or open an existing bill by its id</label><input id="billId" name="billId" type="text" inputmode="numeric" maxlength="18" placeholder="1"><span class="error-text" id="err-billId" data-error-for="billId"></span></div>
+          <div class="field"><button id="bill-id-button" class="btn btn-secondary" type="submit">Open receipt</button></div>
+        </div>
+      </form>
+    </section>
+
+    <section id="appointment-card" class="card no-print" aria-labelledby="appointment-heading" hidden>
+      <h2 id="appointment-heading">2. Calculate the bill</h2>
+      <div id="appointment-summary"></div>
+      <div id="complete-box" hidden>
+        <p class="alert alert-warning">This appointment is not COMPLETED yet, so it cannot be billed.</p>
+        <button id="complete-button" class="btn btn-secondary" type="button">Mark appointment as completed</button>
+      </div>
+      <form id="bill-form" novalidate hidden>
+        <div class="grid-2">
+          <div class="field"><label for="billingType">Billing type</label><select id="billingType" name="billingType"><option value="STANDARD">Standard</option><option value="SENIOR">Senior citizen discount</option><option value="INSURANCE">Insurance</option></select><span class="hint">Senior discount needs a patient aged 60 or over</span><span class="error-text" id="err-billingType" data-error-for="billingType"></span></div>
+          <div id="coverage-field" hidden><div class="field"><label for="coveragePercent">Insurance cover % (optional)</label><input id="coveragePercent" name="coveragePercent" type="text" inputmode="decimal" maxlength="6" placeholder="e.g. 50"><span class="hint">Leave empty to use the clinic default</span><span class="error-text" id="err-coveragePercent" data-error-for="coveragePercent"></span></div></div>
+        </div>
+        <p class="hint">Total = treatment price + consultation fee - discount (+ tax if configured). Pressing the button issues the bill; one appointment can only have one bill.</p>
+        <button id="bill-button" class="btn" type="submit">Calculate and issue bill</button>
+      </form>
+    </section>
+
+    <section id="receipt-card" class="card" aria-labelledby="receipt-heading" hidden>
+      <h2 id="receipt-heading" class="no-print">3. Receipt</h2>
+      <div id="receipt"></div>
+      <div id="receipt-actions" class="actions no-print">
+        <button id="print-button" class="btn" type="button">Print receipt</button>
+        <div id="payment-box" class="row" hidden>
+          <div class="field"><label for="paymentMethod">Payment method</label>
+            <select id="paymentMethod"><option value="CASH">Cash</option><option value="CARD">Card</option><option value="ONLINE">Online</option><option value="INSURANCE">Insurance</option></select></div>
+          <div class="field"><button id="pay-button" class="btn btn-secondary" type="button">Mark as paid</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer no-print">Sunrise Dental Clinic - staff system</footer>
+  <script type="module" src="js/billing.js"></script>
+</body>
+</html>

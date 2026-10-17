@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Sunrise Dental</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header no-print" id="site-header"></header>
+  <main id="main" class="container">
+    <div id="alerts" aria-live="polite"></div>
+    <h1>Dashboard</h1>
+    <p id="welcome" class="muted"></p>
+    <ul id="menu" class="menu-grid" aria-label="Menu"></ul>
+    <section class="card" aria-labelledby="today-heading">
+      <h2 id="today-heading">Today's appointments</h2>
+      <p id="today-summary" class="muted"></p>
+      <div id="today-table"></div>
+    </section>
+  </main>
+  <footer class="site-footer no-print">Sunrise Dental Clinic - staff system</footer>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

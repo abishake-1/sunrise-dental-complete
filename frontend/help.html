@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Help - Sunrise Dental</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header no-print" id="site-header"></header>
+  <main id="main" class="container">
+    <div id="alerts" aria-live="polite"></div>
+    <h1>Help - guide for new staff</h1>
+    <section class="card" aria-labelledby="toc-heading">
+      <h2 id="toc-heading">Contents</h2>
+      <ol class="help-toc">
+        <li><a href="#h-login">Logging in and out</a></li>
+        <li><a href="#h-book">Booking an appointment</a></li>
+        <li><a href="#h-search">Finding an appointment</a></li>
+        <li><a href="#h-status">Changing the status</a></li>
+        <li><a href="#h-bill">Billing and printing a receipt</a></li>
+        <li><a href="#h-reports">Reports (administrators)</a></li>
+        <li><a href="#h-problems">Messages and what to do</a></li>
+      </ol>
+    </section>
+
+    <section class="card" id="h-login" aria-labelledby="h-login-t">
+      <h2 id="h-login-t">1. Logging in and out</h2>
+      <ol class="help-steps">
+        <li>Open the clinic system address in your browser. The <strong>login</strong> page appears.</li>
+        <li>Type your username and password, then press <strong>Log in</strong>.</li>
+        <li>After 5 wrong passwords the account is locked for a while - ask the administrator if that happens.</li>
+        <li>The <strong>Dashboard</strong> shows the menu and today's appointments. The <strong>Reports</strong> item only appears for administrators.</li>
+        <li>When you finish, always press <strong>Exit</strong>. It signs you out and returns to the login page. If you are idle for a long time the system signs you out by itself.</li>
+      </ol>
+    </section>
+
+    <section class="card" id="h-book" aria-labelledby="h-book-t">
+      <h2 id="h-book-t">2. Booking an appointment</h2>
+      <ol class="help-steps">
+        <li>Choose <strong>Register Appointment</strong> in the menu.</li>
+        <li><strong>Existing patient:</strong> type part of the name or phone number, press <strong>Search</strong>, then press <strong>Select</strong> next to the right person.</li>
+        <li><strong>New patient:</strong> choose "New patient" and fill in the form. First and last name use letters only. The phone number must be a mobile number like <strong>0771234567</strong> (07 followed by 8 digits). The address is optional but needs at least 5 characters when entered.</li>
+        <li>Pick the <strong>dentist</strong> and the <strong>treatment</strong>. The page shows the dentist's working hours and how long the treatment takes.</li>
+        <li>Pick the <strong>date</strong> (today or later) and the <strong>time</strong> (between 08:00 and 18:00, in steps of 15 minutes). Times that are already taken for that dentist are listed under the form.</li>
+        <li>Press <strong>Book appointment</strong>. A confirmation shows the new appointment number, for example <strong>APT-0007</strong>. Give this number to the patient.</li>
+      </ol>
+      <p class="callout">A dentist cannot have two appointments at the same time. If the slot is taken, choose another time.</p>
+    </section>
+
+    <section class="card" id="h-search" aria-labelledby="h-search-t">
+      <h2 id="h-search-t">3. Finding an appointment</h2>
+      <ol class="help-steps">
+        <li>Choose <strong>Search</strong>.</li>
+        <li>Type the appointment number (format <strong>APT-0001</strong>) and press <strong>Search</strong>.</li>
+        <li>The page shows the date, time, status, patient, dentist, treatment and notes.</li>
+      </ol>
+    </section>
+
+    <section class="card" id="h-status" aria-labelledby="h-status-t">
+      <h2 id="h-status-t">4. Changing the status</h2>
+      <p>On the search result you can press the buttons that apply:</p>
+      <ul>
+        <li><strong>Confirm</strong> - the patient confirmed the visit.</li>
+        <li><strong>Mark completed</strong> - the treatment was done. Only completed appointments can be billed.</li>
+        <li><strong>Mark no-show</strong> - the patient did not come.</li>
+        <li><strong>Cancel appointment</strong> - frees the time slot. You are asked to confirm first.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="h-bill" aria-labelledby="h-bill-t">
+      <h2 id="h-bill-t">5. Billing and printing a receipt</h2>
+      <ol class="help-steps">
+        <li>Complete the appointment first (see section 4).</li>
+        <li>Choose <strong>Bill</strong>, type the appointment number and press <strong>Load</strong>.</li>
+        <li>Choose the billing type: <strong>Standard</strong>, <strong>Senior citizen discount</strong> (patient aged 60 or over) or <strong>Insurance</strong> (you may enter the cover percentage).</li>
+        <li>Press <strong>Calculate and issue bill</strong>. The receipt appears: treatment price + consultation fee - discount.</li>
+        <li>Press <strong>Print receipt</strong>. In the print window only the receipt is printed.</li>
+        <li>When the patient pays, choose the payment method and press <strong>Mark as paid</strong>.</li>
+      </ol>
+      <p class="callout">An appointment can only be billed once. If you try again, the system opens the existing receipt.</p>
+    </section>
+
+    <section class="card" id="h-reports" aria-labelledby="h-reports-t">
+      <h2 id="h-reports-t">6. Reports (administrators)</h2>
+      <ol class="help-steps">
+        <li>Choose <strong>Reports</strong>, pick a report and the dates (or year and month) and press <strong>Show report</strong>.</li>
+        <li>You see a bar chart and a table. <strong>Download CSV</strong> saves the table for Excel.</li>
+      </ol>
+    </section>
+
+    <section class="card" id="h-problems" aria-labelledby="h-problems-t">
+      <h2 id="h-problems-t">7. Messages and what to do</h2>
+      <ul>
+        <li><strong>"Your session has expired"</strong> - log in again.</li>
+        <li><strong>"Cannot reach the server"</strong> - check your network; if it continues, tell the administrator.</li>
+        <li><strong>Red text under a field</strong> - correct that field. The same rules are checked again by the server.</li>
+        <li><strong>"You do not have permission"</strong> - the action needs an administrator.</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="site-footer no-print">Sunrise Dental Clinic - staff system</footer>
+  <script type="module" src="js/help.js"></script>
+</body>
+</html>

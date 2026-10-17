@@ -1,0 +1,27 @@
+# Build output
+target/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Secrets / local configuration (credentials come from environment variables)
+.env
+*.env
+*.local.properties
+
+# Generated at run time: printable receipts and the mock notification outbox
+receipts/
+notifications-outbox.log

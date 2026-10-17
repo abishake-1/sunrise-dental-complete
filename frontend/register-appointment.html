@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register Appointment - Sunrise Dental</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header no-print" id="site-header"></header>
+  <main id="main" class="container">
+    <div id="alerts" aria-live="polite"></div>
+    <h1>Register Appointment</h1>
+    <form id="booking-form" novalidate>
+      <section class="card" aria-labelledby="patient-heading">
+        <h2 id="patient-heading">1. Patient</h2>
+        <div class="choice-row" role="radiogroup" aria-label="Patient type">
+          <label><input type="radio" name="patientMode" id="mode-existing" value="existing" checked> Existing patient</label>
+          <label><input type="radio" name="patientMode" id="mode-new" value="new"> New patient</label>
+        </div>
+
+        <div id="existing-panel">
+          <div class="row">
+            <div class="field"><label for="patient-search">Search by name or phone</label>
+              <input id="patient-search" type="search" maxlength="50" autocomplete="off"></div>
+            <div class="field"><button id="patient-search-button" class="btn btn-secondary" type="button">Search</button></div>
+          </div>
+          <div id="patient-results"></div>
+          <p id="selected-patient" class="alert alert-info" hidden></p>
+          <span class="error-text" id="err-patientId" data-error-for="patientId"></span>
+        </div>
+
+        <div id="new-panel" hidden>
+          <div class="grid-2">
+            <div class="field"><label for="firstName">First name</label><input id="firstName" name="firstName" type="text" maxlength="50" autocomplete="off"><span class="hint">Letters only</span><span class="error-text" id="err-firstName" data-error-for="firstName"></span></div>
+            <div class="field"><label for="lastName">Last name</label><input id="lastName" name="lastName" type="text" maxlength="50" autocomplete="off"><span class="hint">Letters only</span><span class="error-text" id="err-lastName" data-error-for="lastName"></span></div>
+            <div class="field"><label for="dateOfBirth">Date of birth</label><input id="dateOfBirth" name="dateOfBirth" type="date" min="1900-01-01"><span class="error-text" id="err-dateOfBirth" data-error-for="dateOfBirth"></span></div>
+            <div class="field"><label for="gender">Gender</label><select id="gender" name="gender"><option value="">Choose...</option><option value="FEMALE">Female</option><option value="MALE">Male</option><option value="OTHER">Other</option></select><span class="error-text" id="err-gender" data-error-for="gender"></span></div>
+            <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" inputmode="numeric" maxlength="10" placeholder="0771234567" autocomplete="off"><span class="hint">Sri Lankan mobile: 07XXXXXXXX</span><span class="error-text" id="err-phone" data-error-for="phone"></span></div>
+            <div class="field"><label for="email">E-mail (optional)</label><input id="email" name="email" type="email" maxlength="120" autocomplete="off"><span class="error-text" id="err-email" data-error-for="email"></span></div>
+          </div>
+          <div class="field"><label for="address">Address (optional)</label><input id="address" name="address" type="text" maxlength="255" autocomplete="off"><span class="hint">5 to 255 characters when given</span><span class="error-text" id="err-address" data-error-for="address"></span></div>
+          <div class="field"><label for="medicalNotes">Medical notes (optional)</label><textarea id="medicalNotes" name="medicalNotes" maxlength="5000"></textarea><span class="hint">Allergies, conditions, medication</span><span class="error-text" id="err-medicalNotes" data-error-for="medicalNotes"></span></div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="appointment-heading">
+        <h2 id="appointment-heading">2. Appointment</h2>
+        <div class="grid-2">
+          <div class="field"><label for="dentistId">Dentist</label><select id="dentistId" name="dentistId"><option value="">Loading...</option></select><span class="error-text" id="err-dentistId" data-error-for="dentistId"></span></div>
+          <div class="field"><label for="treatmentId">Treatment</label><select id="treatmentId" name="treatmentId"><option value="">Loading...</option></select><span class="error-text" id="err-treatmentId" data-error-for="treatmentId"></span></div>
+          <div class="field"><label for="date">Date</label><input id="date" name="date" type="date"><span class="error-text" id="err-date" data-error-for="date"></span></div>
+          <div class="field"><label for="time">Time</label><input id="time" name="time" type="time" step="900" min="08:00" max="18:00"><span class="hint">08:00 to 18:00, every 15 minutes</span><span class="error-text" id="err-time" data-error-for="time"></span></div>
+        </div>
+        <p id="dentist-info" class="hint"></p>
+        <p id="treatment-info" class="hint"></p>
+        <div id="booked-slots" class="hint"></div>
+        <div class="field"><label for="notes">Notes (optional)</label><textarea id="notes" name="notes" maxlength="500"></textarea><span class="error-text" id="err-notes" data-error-for="notes"></span></div>
+        <div class="actions"><button id="submit-button" class="btn" type="submit">Book appointment</button></div>
+      </section>
+    </form>
+
+    <section id="result-card" class="card" aria-labelledby="result-heading" hidden>
+      <h2 id="result-heading">Appointment booked</h2>
+      <p>Appointment number</p>
+      <p class="big-number" id="result-number"></p>
+      <p id="result-details" class="muted"></p>
+      <div class="actions">
+        <a id="result-link" class="btn" href="search.html">View details</a>
+        <button id="book-another" class="btn btn-secondary" type="button">Book another</button>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer no-print">Sunrise Dental Clinic - staff system</footer>
+  <script type="module" src="js/register-appointment.js"></script>
+</body>
+</html>
